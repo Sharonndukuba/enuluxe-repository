@@ -9,6 +9,9 @@ import Sell from "./pages/Sell";
 import Buy from './pages/buy';
 import Rent from './pages/rent';
 import SellSuccess from './pages/SellSuccess.jsx';
+import PaymentSuccess from "./pages/PaymentSuccess"; // adjust path
+
+
 function App() {
   return (
       <Router>
@@ -23,7 +26,7 @@ function App() {
               <Route path="/buy" element={<Buy />} />
               <Route path="/rent" element={<Rent />} />
               <Route path="/sell-success" element={<SellSuccess />} />
-
+              <Route path="/paymentsuccess" element={<PaymentSuccess />} />
           </Routes>
         </div>
       </Router>
