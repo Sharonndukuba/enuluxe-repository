@@ -89,6 +89,7 @@ export default function Sell() {
 
                 {/* Navigation */}
                 <nav style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                    <Link to="/" style={navLink}>Home</Link>
                     <Link to="/buy" style={navLink}>Buy</Link>
                     <Link to="/sell" style={navLink}>Sell</Link>
                     <Link to="/rent" style={navLink}>Rent</Link>
