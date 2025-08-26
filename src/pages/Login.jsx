@@ -73,9 +73,17 @@ const Login = () => {
                 form
             );
 
-            if (res.data?.token) {
-                localStorage.setItem("token", res.data.token); // save token
+            // if (res.data?.token) {
+            //     localStorage.setItem("token", res.data.token); // save token
+            //     console.log("Token saved from backend:", localStorage.getItem("token"));
+            // }
+
+            const token = res.data.token;
+            if (token) {
+                localStorage.setItem("token", token);
+                console.log("Saved Token", token)
             }
+
 
             setSuccess("Login successful! Redirecting...");
             setError("");
