@@ -572,17 +572,17 @@ const BuyPage = () => {
             console.log("Booking property with ID:", propertyId);
 
             // ✅ Send request with Authorization header
-            const res = await axios.post(
-                `https://realestateapis.onrender.com/payments/buy/${propertyId}`,  // backend auto-sets email, amount, reference
-
-
+             const res = await axios.post(
+                `https://realestateapis.onrender.com/payments/buy/${propertyId}`,
+                {}, // 👈 empty body
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 }
             );
-console.log(res)
+
+            console.log(res)
             console.log("Payment init response:", res.data);
 
             // ✅ Redirect user to Paystack checkout page
@@ -614,8 +614,10 @@ console.log(res)
             const token = localStorage.getItem("token");
             if (!token) return;
 
-            axios
-                .post(`https://realestateapis.onrender.com/payments/verify/${reference}`, {
+            axios.post(
+                `https://realestateapis.onrender.com/payments/verify/${reference}`,
+                {}, // 👈 empty body
+                {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
